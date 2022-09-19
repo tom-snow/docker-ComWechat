@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+    wechatpchook:
+        container_name: comwechat
+        ports:
+            - '5905:5905' # VNC 端口，可以修改冒号后的部分
+            - '18888:18888' # dll 开启的端口，具体由 python 端设置（建议冒号前后相同）
+            - '10808:10808' # dll 开启的端口，具体由 python 端设置（建议冒号前后相同）
+        environment:
+            - VNCPASS=asdfgh123
+        ipc: host
+        volumes:
+            - "./volume/WeChat Files/:/home/user/.wine/drive_c/users/user/My Documents/WeChat Files/"
+            - "./volume/Application Data/:/home/user/.wine/drive_c/users/user/Application Data/"
+            # - "./volume/python3/:/home/user/.wine/drive_c/python3/"
+        privileged: true
+        # image: tomsnow1999/docker-com_wechat_robot
+        # image: docker-com_wechat_robot:v0.2
+        build: 
+            context: .
+            dockerfile: ./Dockerfile

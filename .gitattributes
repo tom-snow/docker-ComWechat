@@ -1,0 +1,2 @@
+wine/Tencent.zip filter=lfs diff=lfs merge=lfs -text
+ndp472-kb4054530-x86-x64-allos-enu.exe filter=lfs diff=lfs merge=lfs -text
