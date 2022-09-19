@@ -61,6 +61,6 @@ class DockerWechatHook:
 
 
 if __name__ == '__main__' :
-    print('---All in one 微信Hook容器---')
+    print('---All in one 微信 ComRobot 容器---')
     hook = DockerWechatHook()
     hook.run_all_in_one()
