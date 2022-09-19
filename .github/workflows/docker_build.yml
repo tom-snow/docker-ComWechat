@@ -10,7 +10,7 @@ on:
       - 'wine/**'
       - 'Dockerfile'
       - 'VERSION'
-      - '*.py'
+      - 'run.py'
       - 'WeChatHook.exe'
 
 jobs:
