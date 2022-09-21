@@ -57,7 +57,7 @@ class DockerWechatHook:
         self.run_vnc()
         self.run_wechat()
         self.run_hook()
-        print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')+ ' 启动完成.')
+        print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')+ ' 感谢使用.')
 
 
 if __name__ == '__main__' :
