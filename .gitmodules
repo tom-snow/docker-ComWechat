@@ -1,0 +1,3 @@
+[submodule "ComWeChatRobot"]
+	path = ComWeChatRobot
+	url = https://github.com/ljc545w/ComWeChatRobot.git
