@@ -19,14 +19,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          lfs: true
+        # with:
+        #   lfs: true
       
-      - name: Checkout LFS objects
-        run: git lfs checkout
+      # - name: Checkout LFS objects
+      #   run: git lfs checkout
 
-      - name: init submodule
-        run: git submodule update --init --recursive
+      # - name: init submodule
+      #   run: git submodule update --init --recursive
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1

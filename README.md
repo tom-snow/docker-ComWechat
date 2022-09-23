@@ -11,6 +11,7 @@ docker run \
     --name comwechat  \
     --network host \
     -e VNCPASS=asdfgh123 \
+    -e COMWECHAT=https://github.com/ljc545w/ComWeChatRobot/releases/download/3.7.0.30-0.0.5/3.7.0.30-0.0.5.zip \
     -dti  \
     --ipc=host \
     --privileged \
@@ -23,6 +24,7 @@ docker run \
 * 端口 5905: VNC 服务的端口(无法/无需修改)
 * network host: 使用宿主机网络(在 Linux Docker 环境下使用)
 * 环境变量 VNCPASS: 连接 VNC 的密码（可自定义，建议在服务器上使用本镜像的话设置得难一点）
+* 环境变量 COMWECHAT: [ComWeChatRobot](https://github.com/ljc545w/ComWeChatRobot/releases)具体版本的动态库文件压缩包(右键复制发布的文件的下载链接)【不设置此参数则默认为`3.7.0.30-0.0.5`的链接】
 * 目录映射 `WeChat Files`: 微信收到的图片/文件存储的目录(可以取消目录映射)
 * 目录映射 `Application Data`: 微信数据目录(可以取消目录映射)
 

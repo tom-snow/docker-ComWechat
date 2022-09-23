@@ -8,13 +8,14 @@ services:
         #     - '10808:10808' # dll 开启的端口，具体由 python 端设置（建议冒号前后相同）
         environment:
             - VNCPASS=asdfgh123
+            - COMWECHAT=https://github.com/ljc545w/ComWeChatRobot/releases/download/3.7.0.30-0.0.5/3.7.0.30-0.0.5.zip
         ipc: host
         volumes:
             - "./volume/WeChat Files/:/home/user/.wine/drive_c/users/user/My Documents/WeChat Files/"
             - "./volume/Application Data/:/home/user/.wine/drive_c/users/user/Application Data/"
         privileged: true
         network_mode: host
-        image: tomsnow1999/docker-com_wechat_robot:latest
-        # build: 
-        #     context: .
-        #     dockerfile: ./Dockerfile
+        # image: tomsnow1999/docker-com_wechat_robot:latest
+        build: 
+            context: .
+            dockerfile: ./Dockerfile

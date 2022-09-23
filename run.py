@@ -11,6 +11,20 @@ class DockerWechatHook:
     def now_exit(self, signum, frame):
         self.exit_container()
 
+    def prepare(self):
+        # if not os.path.exists("/comwechat/http/SWeChatRobot.dll"):
+        if not os.path.exists("/dll_downloaded.txt"):
+            COMWECHAT = os.environ['COMWECHAT']
+            # NOTE: 当 ComWeChatRobot 的仓库地址变动的话需要修改
+            if not COMWECHAT.startswith("https://github.com/ljc545w/ComWeChatRobot/releases/download/"):
+                print("你提供的地址不是 COMWECHAT 仓库的 Release 下载地址，程序将自动退出！")
+                self.exit_container()
+            self.prepare = subprocess.run(['wget', COMWECHAT, '-O', 'comwechat.zip'])
+            self.prepare = subprocess.run(['unzip', '-d', 'comwechat', 'comwechat.zip'])
+            self.prepare = subprocess.run(['mv', '/WeChatHook.exe', '/comwechat/http/WeChatHook.exe'])
+            with open("/dll_downloaded.txt", "w") as f:
+                f.write("True\n")
+
     def run_vnc(self):
         # 根据 VNCPASS 环境变量生成 vncpasswd 文件
         os.makedirs('/root/.vnc', mode=755, exist_ok=True)
@@ -31,7 +45,7 @@ class DockerWechatHook:
         # self.wechat = subprocess.run(['wine','/home/user/.wine/drive_c/Program Files/Tencent/WeChat/WeChat.exe'])
 
     def run_hook(self):
-        self.reg_hook = subprocess.run(['wine','/socket/WeChatHook.exe'])
+        self.reg_hook = subprocess.run(['wine','/comwechat/http/WeChatHook.exe'])
         # self.reg_hook = subprocess.run(['wine', 'explorer.exe'])
 
     def exit_container(self):
@@ -54,6 +68,7 @@ class DockerWechatHook:
 
     def run_all_in_one(self):
         print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')+ ' 启动容器中...')
+        self.prepare()
         self.run_vnc()
         self.run_wechat()
         self.run_hook()

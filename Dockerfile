@@ -7,7 +7,8 @@ ENV WINEPREFIX=/home/user/.wine \
     LANG=zh_CN.UTF-8 \
     LC_ALL=zh_CN.UTF-8 \
     DISPLAY=:5 \
-    VNCPASS=YourSafeVNCPassword
+    VNCPASS=YourSafeVNCPassword \
+    COMWECHAT=https://github.com/ljc545w/ComWeChatRobot/releases/download/3.7.0.30-0.0.5/3.7.0.30-0.0.5.zip
 
 # 提示 vnc 使用的端口， dll 的端口自行映射
 EXPOSE 5905
@@ -27,8 +28,9 @@ COPY wine/userdef.reg /home/user/.wine/userdef.reg
 
 # COPY wine/Tencent.zip /Tencent.zip
 RUN wget --no-check-certificate -O /Tencent.zip "https://github.com/tom-snow/docker-ComWechat/releases/download/v0.2_wc3.7.0.30/Tencent.zip"
-COPY ComWeChatRobot/Release/socket /socket
-COPY WeChatHook.exe /socket/WeChatHook.exe
+
+# COPY ComWeChatRobot/Release/socket /socket
+COPY WeChatHook.exe /WeChatHook.exe
 
 COPY run.py /run.py
 # https://github.com/tom-snow/wechat-windows-versions/releases/download/v3.7.0.30/WeChatSetup-3.7.0.30.exe
