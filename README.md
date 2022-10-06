@@ -35,9 +35,12 @@ docker run \
 
 
 ## 鸣谢
-[ljc545w/ComWeChatRobot](https://github.com/ljc545w/ComWeChatRobot)
+[ljc545w/ComWeChatRobot](https://github.com/ljc545w/ComWeChatRobot): ComWeChatRobot 项目本体
 
-[@0honus0](https://github.com/0honus0)
+[0honus0/ComWeChat_Inject](https://github.com/0honus0/ComWeChat_Inject): 本镜像所使用的注入器
+
+## 相关项目
+[efb-wechat-comwechat-slave](https://github.com/0honus0/efb-wechat-comwechat-slave): 使用 Telegram 来接收&管理微信消息
 
 ## 声明
 **本项目仅供学习研究，强烈反对商业用途或者滥用(通过程序化控制微信对其他人进行骚扰诈骗等)！**
