@@ -323,7 +323,6 @@ if __name__ == '__main__':
     print(post_wechat_http_api(APIS.WECHAT_GET_SELF_INFO, port))
 
     # 获取最新版本微信版本号 @tom-snow
-    # https://api.github.com/repos/tom-snow/wechat-windows-versions/releases?per_page=1 # json 读 [0]["tag_name"]
     resp = requests.get(url = "https://api.github.com/repos/tom-snow/wechat-windows-versions/releases?per_page=1",params = {"per_page": 1})
     latest_version = resp.json()[0]["tag_name"]
     print(post_wechat_http_api(APIS.WECHAT_SET_VERSION, port, {"version": latest_version})) # 修改成最新版本，防止更新

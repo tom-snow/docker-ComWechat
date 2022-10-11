@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import subprocess, os, signal, datetime
+import subprocess, os, signal, datetime, time
 
 
 class DockerWechatHook:
@@ -45,6 +45,8 @@ class DockerWechatHook:
         # self.wechat = subprocess.run(['wine','/home/user/.wine/drive_c/Program Files/Tencent/WeChat/WeChat.exe'])
 
     def run_hook(self):
+        print("等待 5 秒再 hook")
+        time.sleep(5)
         self.reg_hook = subprocess.run(['wine','/comwechat/http/WeChatHook.exe'])
         # self.reg_hook = subprocess.run(['wine', 'explorer.exe'])
 

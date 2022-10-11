@@ -1,3 +1,5 @@
+/docker-compose-dev.yaml
+/Dockerfile-dev
 
 # General
 .DS_Store
