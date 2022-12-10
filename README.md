@@ -43,4 +43,4 @@ docker run \
 [efb-wechat-comwechat-slave](https://github.com/0honus0/efb-wechat-comwechat-slave): 使用 Telegram 来接收&管理微信消息
 
 ## 声明
-**本项目仅供学习研究，强烈反对商业用途或者滥用(通过程序化控制微信对其他人进行骚扰诈骗等)！**
+**本项目仅供学习研究，强烈反对商业用途或者滥用(通过程序化控制微信对其他人进行骚扰诈骗等)！使用本项目造成的一切责任与本人无关，一切责任由使用者自行承担！**
